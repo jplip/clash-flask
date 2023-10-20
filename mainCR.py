@@ -5,10 +5,10 @@ from flask import render_template  # import render_template from "public" flask 
 
 # import "packages" from "this" project
 from __init__ import app,db  # Definitions initialization
-from model.jokesCR import initStats
+from model.characters import initCharacters
 
 # setup APIs
-from api.jokeCR import stats_api
+from api.characters import characters_api
 
 # setup App pages
 from projects.projects import app_projects # Blueprint directory import projects definition
@@ -18,7 +18,7 @@ from projects.projects import app_projects # Blueprint directory import projects
 db.init_app(app)
 
 # register URIs
-app.register_blueprint(stats_api)
+app.register_blueprint(characters_api)
 app.register_blueprint(app_projects) # register app pages
 
 @app.errorhandler(404)  # catch for URL not found
@@ -36,7 +36,7 @@ def table():
 
 @app.before_first_request
 def activate_job():  # activate these items
-    initStats()
+    initCharacters()
 
 # this runs the application on the development server
 if __name__ == "__main__":

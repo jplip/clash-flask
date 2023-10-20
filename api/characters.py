@@ -3,15 +3,15 @@ from flask_restful import Api, Resource # used for REST API building
 import requests  # used for testing 
 import random
 
-from model.jokesCR import *
+from model.characters import *
 
-stats_api = Blueprint('stats_api', __name__,
+characters_api = Blueprint('characters_api', __name__,
                    url_prefix='/api/characters')
 
 # API generator https://flask-restful.readthedocs.io/en/latest/api.html#id1
-api = Api(stats_api)
+api = Api(characters_api)
 
-class StatsAPI:
+class CharactersAPI:
     # not implemented
     class _Create(Resource):
         def post(self, joke):
@@ -63,7 +63,7 @@ class StatsAPI:
 if __name__ == "__main__": 
     # server = "http://127.0.0.1:5000" # run local
     server = 'https://flask.nighthawkcodingsociety.com' # run from web
-    url = server + "/api/jokesCR"
+    url = server + "/api/characters"
     responses = []  # responses list
 
     # get count of jokes on server

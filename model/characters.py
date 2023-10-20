@@ -56,10 +56,76 @@ card_list = [
     "Ram Rider",
     "Zappies",
     "Rascals",
+    "Cannon Cart",
+    "Mega Knight",
+    "Skeleton Barrel",
+    "Flying Machine",
+    "Wall Breakers",
+    "Royal Hogs",
+    "Goblin Giant",
+    "Fisherman",
+    "Magic Archer",
+    "Electro Dragon",
+    "Firecracker",
+    "Mighty Miner",
+    "Super Witch",
+    "Elixir Golem",
+    "Battle Healer",
+    "Skeleton King",
+    "Super Lava Hound",
+    "Super Magic Archer",
+    "Archer Queen",
+    "Santa Hog Rider",
+    "Golden Knight",
+    "Super Ice Golem",
+    "Monk",
+    "Royal Recruits",
+    "Skeleton Dragons",
+    "Terry",
+    "Super Mini P.E.K.K.A"
+    "Mother Witch",
+    "Electro Spirit",
+    "Electro Giant",
+    "Raging Prince",
+    "Phoenix",
+    "Cannon",
+    "Goblin Hut",
+    "Mortar",
+    "Inferno Tower",
+    "Bomb Tower",
+    "Barbarian Hut",
+    "Tesla",
+    "Elixir Collector",
+    "X-Bow",
+    "Tombstone",
+    "Furnace",
+    "Goblin Cage",
+    "Goblin Drill",
+    "Party Hut",
+    "Fireball",
+    "Arrrows",
+    "Rage",
+    "Rocket",
+    "Goblin Barrel",
+    "Freeze",
+    "Mirror",
+    "Lightning",
+    "Zap",
+    "Poison",
+    "Graveyard",
+    "The Log",
+    "Tornado",
+    "Clone",
+    "Earthquake",
+    "Barbarian Barrel",
+    "Heal Spirit",
+    "Giant Snowball",
+    "Royal Delivery",
+    "Party Rocket"
 ]
 
 # Initialize jokes
-def initStats():
+def initCharacters():
     # setup jokes into a dictionary with id, joke, haha, boohoo
     item_id = 0
     for item in card_list:
@@ -126,7 +192,7 @@ def countJokes():
 
 # Test Joke Model
 if __name__ == "__main__": 
-    initStats()  # initialize jokes
+    initCharacters()  # initialize jokes
     
     # Most likes and most jeered
     best = favoriteJoke()
