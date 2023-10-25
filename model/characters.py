@@ -79,7 +79,6 @@ card_list = [
     "Golden Knight",
     "Super Ice Golem",
     "Monk",
-    "Royal Recruits",
     "Skeleton Dragons",
     "Terry",
     "Super Mini P.E.K.K.A"
