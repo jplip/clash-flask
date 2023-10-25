@@ -3,13 +3,13 @@ from flask_restful import Api, Resource # used for REST API building
 import requests  # used for testing 
 import random
 
-from model.common import *
+from model.rare import *
 
-common_api = Blueprint('common_api', __name__,
-                   url_prefix='/api/common')
+rare_api = Blueprint('rare_api', __name__,
+                   url_prefix='/api/rare')
 
 # API generator https://flask-restful.readthedocs.io/en/latest/api.html#id1
-api = Api(common_api)
+api = Api(rare_api)
 
 class CharactersAPI:
     # not implemented
@@ -63,7 +63,7 @@ class CharactersAPI:
 if __name__ == "__main__": 
     # server = "http://127.0.0.1:5000" # run local
     server = 'https://flask.nighthawkcodingsociety.com' # run from web
-    url = server + "/api/common"
+    url = server + "/api/rare"
     responses = []  # responses list
 
     # get count of jokes on server
