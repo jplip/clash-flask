@@ -34,7 +34,7 @@ card_list = [
 ]
 
 # Initialize jokes
-def init():
+def initEpic():
     # setup jokes into a dictionary with id, joke, haha, boohoo
     item_id = 0
     for item in card_list:
@@ -101,7 +101,7 @@ def countJokes():
 
 # Test Joke Model
 if __name__ == "__main__": 
-    init()  # initialize jokes
+    initEpic()  # initialize jokes
     
     # Most likes and most jeered
     best = favoriteJoke()
