@@ -9,6 +9,8 @@ from model.characters import initCharacters
 
 # setup APIs
 from api.characters import characters_api
+from api.common import common_api
+
 
 # setup App pages
 from projects.projects import app_projects # Blueprint directory import projects definition
@@ -19,6 +21,7 @@ db.init_app(app)
 
 # register URIs
 app.register_blueprint(characters_api)
+app.register_blueprint(common_api)
 app.register_blueprint(app_projects) # register app pages
 
 @app.errorhandler(404)  # catch for URL not found
