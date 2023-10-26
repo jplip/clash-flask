@@ -6,7 +6,7 @@ import random
 from model.champion import *
 
 champion_api = Blueprint('champion_api', __name__,
-                   url_prefix='/api/characters')
+                   url_prefix='/api/champion')
 
 # API generator https://flask-restful.readthedocs.io/en/latest/api.html#id1
 api = Api(champion_api)
