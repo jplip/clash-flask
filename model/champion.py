@@ -2,37 +2,16 @@ import random
 
 card_data = []
 card_list = [
-    "Ice Wizard",
-    "Princess",
-    "Lava Hound",
-    "Miner",
-    "Sparky",
-    "Lunberjack",
-    "Inferno Dragon",
-    "Electro Wizard",
-    "Bandit",
-    "Night Witch",
-    "Royal Ghost",
-    "Ram Rider",
-    "Mega Knight",
-    "Fisherman",
-    "Magic Archer",
-    "Super Witch",
-    "Super Lava Hound",
-    "Super Magic Archer",
-    "Santa Hog Rider",
-    "Super Ice Golem",
-    "Super Mini P.E.K.K.A"
-    "Mother Witch",
-    "Phoenix",
-    "Party Hut",
-    "Graveyard",
-    "The Log",
-    "Party Rocket"
+    "Mighty Miner",
+    "Skeleton King",
+    "Archer Queen",
+    "Golden Knight",
+    "Monk",
+    "Terry",
 ]
 
 # Initialize jokes
-def initLegendary():
+def initChampion():
     # setup jokes into a dictionary with id, joke, haha, boohoo
     item_id = 0
     for item in card_list:
@@ -99,7 +78,7 @@ def countJokes():
 
 # Test Joke Model
 if __name__ == "__main__": 
-    initCharacters()  # initialize jokes
+    initChampion()  # initialize jokes
     
     # Most likes and most jeered
     best = favoriteJoke()

@@ -10,7 +10,7 @@ from model.common import initCommon
 from model.rare import initRare
 from model.epic import initEpic
 from model.legendary import initLegendary
-
+from model.champion import initChampion
 
 # setup APIs
 from api.characters import characters_api
@@ -18,7 +18,7 @@ from api.common import common_api
 from api.rare import rare_api
 from api.epic import epic_api
 from api.legendary import legendary_api
-
+from api.champion import champion_api
 
 # setup App pages
 from projects.projects import app_projects # Blueprint directory import projects definition
@@ -33,6 +33,7 @@ app.register_blueprint(common_api)
 app.register_blueprint(rare_api)
 app.register_blueprint(epic_api)
 app.register_blueprint(legendary_api)
+app.register_blueprint(champion_api)
 app.register_blueprint(app_projects) # register app pages
 
 @app.errorhandler(404)  # catch for URL not found
@@ -53,9 +54,9 @@ def activate_job():  # activate these items
     initCharacters()
     initCommon()
     initRare()
-    initEpic
-    initLegendary
-
+    initEpic()
+    initLegendary()
+    initChampion()
 # this runs the application on the development server
 if __name__ == "__main__":
     # change name for testing
