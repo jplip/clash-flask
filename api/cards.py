@@ -37,16 +37,6 @@ def beautify_json_data(json_file_path):
         return {"error": "File not found"}
     except json.JSONDecodeError:
         return {"error": "Invalid JSON format in the file"}
-
-
-beautify_json_data("carddb.json")
-
-# getJokes()
-class _Read(Resource):
-    def get(self):
-        json_list = []
-        json_list.append(beautify_json_data('carddb.json'))
-        return jsonify(json_list)
-
-
-api.add_resource(_Read, '/')
+    
+json_list = []
+json_list.append(beautify_json_data('carddb.json'))
