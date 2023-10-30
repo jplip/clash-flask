@@ -1,4 +1,18 @@
 import threading
+import json
+
+# Open and read the JSON file
+with open('carddb.json') as json_file:
+    data = json.load(json_file)
+    
+     # Access the data
+    name = data
+    id = data
+    maxlevel = data
+    maxEvolutionLevel = data
+    iconUrls = data
+    medium = data
+    evolutionMedium = data
 
 # import "packages" from flask
 from flask import render_template  # import render_template from "public" flask libraries
@@ -8,7 +22,6 @@ from __init__ import app,db  # Definitions initialization
 from model.jokes import initJokes
 from model.users import initUsers
 from model.players import initPlayers
-
 
 # setup APIs
 from api.covid import covid_api # Blueprint import api definition
