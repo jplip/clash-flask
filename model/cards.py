@@ -23,6 +23,7 @@ def getCard(id):
         
 # Generate a random card
 def generateRandomCard():
+    print(card_data)  # Add this line to check the contents of card_data
     return random.choice(card_data)
 
 # Number of cards
