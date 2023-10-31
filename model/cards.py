@@ -15,6 +15,9 @@ def initCards():
 # Call initCards() to load the card data from carddb.json
 initCards()
 
+def getCard():
+    return(card_data)
+
 # Define the getCard function
 def getCard(id):
     for card in card_data:
@@ -32,12 +35,9 @@ def countCards():
 
 # Test Card Model
 if __name__ == "__main__":
-    # Most liked and most jeered cards are not applicable for cards, so you can remove those parts
 
     # Random card
     print("Random card:")
     random_card = generateRandomCard()
     print(random_card)
 
-    # Count of Cards
-    print("Cards Count: " + str(countCards()))
