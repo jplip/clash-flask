@@ -6,6 +6,7 @@ from flask import Blueprint, request, jsonify
 import json
 import requests
 import random
+from flask import request
 
 cards_api = Blueprint('cards_api', __name__,
                   url_prefix='/api/cards')
@@ -54,6 +55,25 @@ class _ReadRandom(Resource):
         beautified_data = beautify_json_data('carddb.json')
         random_item = random.choice(beautified_data)
         return jsonify(random_item)
+    
+class _Search(Resource):
+    def get(self):
+        query = request.args.get('query')  # Get the query parameter
+        if not query:
+            return {"error": "No query provided"}, 400
+
+        beautified_data = beautify_json_data('carddb.json')
+        results = [item for item in beautified_data if query.lower() in item['name'].lower()]
+
+        return jsonify(results)
+
+class _Count(Resource):
+    def get(self):
+        beautified_data = beautify_json_data('carddb.json')
+        count = len(beautified_data)
+        return {"count": count}
 
 api.add_resource(_Read, '/')
 api.add_resource(_ReadRandom, '/random')
+api.add_resource(_Search, '/search')
+api.add_resource(_Count, '/count')
