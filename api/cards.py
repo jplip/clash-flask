@@ -5,7 +5,7 @@ import time
 from flask import Blueprint, request, jsonify
 import json
 import requests
-
+import random
 
 cards_api = Blueprint('cards_api', __name__,
                   url_prefix='/api/cards')
@@ -41,6 +41,7 @@ def beautify_json_data(json_file_path):
 
 beautify_json_data("carddb.json")
 
+
 # getJokes()
 class _Read(Resource):
     def get(self):
@@ -48,5 +49,11 @@ class _Read(Resource):
         json_list.append(beautify_json_data('carddb.json'))
         return jsonify(json_list)
 
+class _ReadRandom(Resource):
+    def get(self):
+        beautified_data = beautify_json_data('carddb.json')
+        random_item = random.choice(beautified_data)
+        return jsonify(random_item)
 
 api.add_resource(_Read, '/')
+api.add_resource(_ReadRandom, '/random')
