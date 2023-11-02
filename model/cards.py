@@ -9,8 +9,13 @@ def initCards():
     try:
         with open("carddb.json", "r") as file:
             card_data = json.load(file)
+        print("Successfully loaded JSON data:", card_data)
     except FileNotFoundError:
-        card_data = []  # Initialize an empty list if the file is not found
+        card_data = []
+        print("File not found.")
+    except Exception as e:
+        print("Error:", e)
+  # Initialize an empty list if the file is not found
 
 # Call initCards() to load the card data from carddb.json
 initCards()
