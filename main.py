@@ -16,8 +16,7 @@ from api.covid import covid_api # Blueprint import api definition
 from api.joke import joke_api # Blueprint import api definition
 from api.user import user_api # Blueprint import api definition
 from api.player import player_api
-from api.cardapi import card_api
-from api.cards import cards_api
+from api.cardsapi import cards_api
 
 
 # setup App pages
@@ -34,7 +33,6 @@ app.register_blueprint(user_api) # register api routes
 app.register_blueprint(player_api)
 app.register_blueprint(app_projects) # register app pages
 app.register_blueprint(cards_api)
-app.register_blueprint(card_api)
 @app.errorhandler(404)  # catch for URL not found
 def page_not_found(e):
     # note that we set the 404 status explicitly
